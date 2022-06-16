@@ -1,0 +1,24 @@
+/*make the background dark purple*/
+}
+<style>
+    a {
+        color: #33658A;
+        text-decoration: none;
+    }
+  .header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #f8c630;
+    font-size: 50px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+  }
+  .idk {
+    margin: auto;
+  }
+  body {
+    margin: 0;
+    background-color: #090446;
+  }
+</style>
