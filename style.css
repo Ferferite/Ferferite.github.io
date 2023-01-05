@@ -1,8 +1,26 @@
 <style>
-    a {
-        color: #33658A;
-        text-decoration: none;
-    }
+  a:link {
+    color: #84828F;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #84828F;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #84828F;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: #84828F;
+    background-color: transparent;
+    text-decoration: underline;
+  }
   .header {
     height: 100vh;
     display: flex;
