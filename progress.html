@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Progress Bar</title>
+	<style>
+		body {
+			background-color: #191919;
+			color: #D4D4D4;
+			font-family: Arial, sans-serif;
+			font-size: 24px;
+			line-height: 1.5;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		h1 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		.progress-container {
+			background-color: #212121;
+			border-radius: 10px;
+			margin: 20px auto;
+			padding: 10px;
+			width: 80%;
+			text-align: center;
+		}
+		.progress-fill {
+			background-color: #D4D4D4;
+			border-radius: 5px;
+			height: 20px;
+			transition: width 0.3s ease-in-out;
+			width: 0;
+		}
+		.progress-text {
+			display: inline-block;
+			margin-left: 10px;
+			flex: 1;
+		}
+	</style>
+</head>
+<body>
+	<h1>@ferferite</h1>
+	<div class="progress-container">
+		<div class="progress-text">HTML</div>
+		<div class="progress-fill" style="width: 80%;"></div>
+	</div>
+
+	<div class="progress-container">
+		<div class="progress-text">CSS</div>
+		<div class="progress-fill" style="width: 60%;"></div>
+	</div>
+
+	<div class="progress-container">
+		<div class="progress-text">JavaScript</div>
+		<div class="progress-fill" style="width: 40%;"></div>
+	</div>
+	<script>
+		// Get the current date
+		const currentDate = new Date();
+		// Calculate the percentage of the current day
+		const currentDay = currentDate.getDate();
+		const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()+1, 0).getDate();
+		const dayPercentage = Math.floor((currentDay / daysInMonth) * 100);
+		// Update the day progress bar and percentage text
+		const dayProgressBar = document.querySelector('.progress-container:nth-of-type(1) .progress-fill');
+		dayProgressBar.style.width = dayPercentage + '%';
+		const dayPercentageText = document.querySelector('.progress-container:nth-of-type(1) .progress-text');
+		dayPercentageText.textContent = dayPercentage + '%';
+		// Calculate the percentage of the current month
+		const monthPercentage = Math.floor(((currentDay-1) / daysInMonth) * 100);
+		// Update the month progress bar and percentage text
+		const monthProgressBar = document.querySelector('.progress-container:nth-of-type(2) .progress-fill');
+		monthProgressBar.style.width = monthPercentage + '%';
+		const monthPercentageText = document.querySelector('.progress-container:nth-of-type(2) .progress-text');
+		monthPercentageText.textContent = monthPercentage + '%';
+		// Calculate the percentage of the current year
+		const currentYear = currentDate.getFullYear();
+		const yearStartDate = new Date(currentYear, 0, 1);
+		const yearEndDate = new Date(currentYear, 11, 31);
+		const yearPercentage = Math.floor(((currentDate - yearStartDate) / (yearEndDate - yearStartDate)) * 100);
+		// Update the year progress bar and percentage text
+		const yearProgressBar = document.querySelector('.progress-container:nth-of-type(3) .progress-fill');
+		yearProgressBar.style.width = yearPercentage + '%';
+		const yearPercentageText = document.querySelector('.progress-container:nth-of-type(3) .progress-text');
+        yearPercentageText.textContent = yearPercentage + '%';
+        // Update the progress bars and percentages every second
+        setInterval(function() {
+        const currentDate = new Date();
+        // Update the day progress bar and percentage text
+        const currentDay = currentDate.getDate();
+        const dayPercentage = Math.floor((currentDate.getHours() / 24) * 100) + Math.floor((currentDate.getMinutes() / 60 / 24) * 100);
+        dayProgressBar.style.width = dayPercentage + '%';
+        dayPercentageText.textContent = 'Day: ' + dayPercentage + '%';
+        // Update the month progress bar and percentage text
+        const monthPercentage = Math.floor(((currentDay) / daysInMonth) * 100);
+        monthProgressBar.style.width = monthPercentage + '%';
+        monthPercentageText.textContent = 'Month: ' + monthPercentage + '%';
+        // Update the year progress bar and percentage text
+        const yearPercentage = Math.floor(((currentDate - yearStartDate) / (yearEndDate - yearStartDate)) * 100);
+        yearProgressBar.style.width = yearPercentage + '%';
+        yearPercentageText.textContent = 'Year: ' + yearPercentage + '%';
+        }, 1000);
+        </script>
+</body>
+</html>
