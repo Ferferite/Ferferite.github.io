@@ -1,0 +1,218 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    position: sticky;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+#home {
+    background: url('your-background-image.png') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed; /* This makes the background image fixed */
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure the hero content takes the full height of the hero section */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.hero a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, #000, transparent);
+    z-index: 0;
+}
+
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .hero a {
+        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    }
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, #000, transparent);
+    z-index: 0;
+}
+
+section {
+    padding: 6rem 0 2rem;
+    text-align: center;
+}
+
+.box {
+    background: #333;
+    background-image: url('grainy-texture.png');
+    background-size: cover;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.box .image {
+    margin-bottom: 1rem;
+}
+
+.box .image img {
+    max-width: 100%;
+    border-radius: 8px;
+	width: 300px;
+    height: 300px;
+}
+
+.box .text {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .box {
+        flex-direction: row-reverse;
+        text-align: left;
+    }
+
+    .box .text {
+        flex: 1;
+        margin-left: 2rem;
+        text-align: left;
+    }
+
+    .box .image {
+        flex: 1;
+        margin-bottom: 0;
+        text-align: right;
+    }
+
+    .box .image img {
+        margin-right: 2rem;
+    }
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact form input, #contact form textarea {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    width: 80%;
+    max-width: 500px;
+    background: #444;
+    border: none;
+    color: #fff;
+}
+
+#contact form button {
+    padding: 0.5rem 2rem;
+    background: #555;
+    color: #fff;
+    border: none;
+}
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+    color: #fff;
+    text-decoration: none;
+}
