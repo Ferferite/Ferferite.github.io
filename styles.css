@@ -137,6 +137,11 @@ section {
     text-align: center;
 }
 
+#views-counter {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .box .image {
     margin-bottom: 1rem;
 }
